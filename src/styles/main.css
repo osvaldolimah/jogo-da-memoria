@@ -28,7 +28,7 @@ h2 {
 }
 
 .reset {
-    padding: 15px 20px;
+    padding: 20px 20px;
     width: 100%;
     color: #000;
     background-color: #fff;
@@ -38,6 +38,9 @@ h2 {
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 600;
+    margin-top: 20px;
+    border-radius: 10px;
+    
 }
 
 .reset:focus {
@@ -46,19 +49,21 @@ h2 {
 }
 
 .game {
-    max-width: 430px;
-    max-height: 430px;
+    max-width: 830px;
+    max-height: 830px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     transform-style: preserve-3d;
     perspective: 500px;
+    align-items: center;
+    justify-content: center;
 }
 
 .item {
     position: relative;
-    width: 100px;
-    height: 100px;
+    max-width: 200px;
+    max-height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,6 +78,7 @@ h2 {
     position: absolute;
     inset: 0;
     background: #404040;
+    opacity: 0.8;
     transition: 0.25s;
     transform: rotateY(0deg);
     backface-visibility: hidden;
@@ -82,6 +88,43 @@ h2 {
     transform: rotateY(0deg);
 }
 
-.boxOpen::after, .boxMatch{
+.boxOpen::after, 
+.boxMatch::after {
     transform: rotateY(180deg);
+}
+
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+.game {
+    max-width: 630px;
+    max-height: 630px;
+    
+} 
+.item {
+    width: 100px;
+    height: 100px;
+}
+}
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
+.game {
+    max-width: 630px;
+    max-height: 630px;
+    
+} 
+.item {
+    width: 100px;
+    height: 100px;
+}
+
+}
+@media (min-width:1281px) { /* hi-res laptops and desktops */ 
+.game {
+    max-width: 630px;
+    max-height: 630px;
+    
+} 
+.item {
+    width: 100px;
+    height: 100px;
+}
+
 }
